@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.CSS') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"> </script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Heart Risk Level Prediction </title>
+
+    <style>
+        .home{
+            background-image: url("https://thumbs.dreamstime.com/b/heart-disease-torn-paper-text-appearing-behind-brown-92606166.jpg");
+            
+        }
+        .nav div.main_list ul li a:hover {
+        color: #020805;   
+}
+
+    .hovfunction :hover{
+        background-color: rgb(211, 226, 226);
+        padding: 15px;
+        border-radius: 8px;   
+       
+    }
+   
+    
+   p.mypar::first-letter{
+    font-size:250%;
+    font-family:Curlz MT;
+    line-height: 0;
+    color:#0033CC;
+    vertical-align: baseline;
+   }
+
+  
+   .rowpargh{
+        color: rgb(3, 3, 3);
+        font-family: 'Nunito', sans-serif;
+
+   }
+   .button{
+       font-size: 30px;
+       padding: 5px 20px;
+       border-radius: 20px;
+       padding-left: 20px;
+       border: 1px solid #01030a;
+       font-family: 'Times New Roman', Times, serif;
+
+   }
+
+   .column-button{
+       padding-left: 240px;
+       padding-top: 120px;
+       background-repeat: no-repeat;
+       background-size: cover;
+      
+   }
+
+  
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="nav">
+        <div class="container">
+            <div class="logo">
+                <h1 style="padding-top: 10px;color:#fff; font-family: 'Nunito', sans-serif; font-size: 40px;font-weight: 700;">
+                     Heart Risk Level Prediction </h1>
+            </div>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks" style="padding-left: 30px;">
+                    <li class="hovfunction"><a href="/Predicte" style="font-family: 'Nunito', sans-serif;">Calculate Risk</a></li>
+                    <!-- <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Services</a></li>-->
+                    <li class="hovfunction"><a href="#" style="font-family: 'Nunito', sans-serif;">Contact</a></li>
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav>
+
+    <section class="home">
+    </section>
+    <div style="height: 1000px">
+        <!-- just to make scrolling effect possible -->
+        <h2 class="myH2">What is the meaning of heart risk ?</h2>
+        <p class="myP mypar" style="font-family: 'Nunito', sans-serif;"> A  heart attack, also called a myocardial infarction,
+            happens when a part of the heart muscle doesn’t get enough blood.
+
+            The more time that passes without treatment to restore blood flow, the greater the damage to the heart
+            muscle.
+
+            Coronary artery disease (CAD) is the main cause of heart attack. A less common cause is a severe spasm, or
+            sudden contraction,
+            of a coronary artery that can stop blood flow to the heart muscle.</p>
+
+
+
+        <!-- <p class="myP">I took inspiration from  ABDO STEIF (<a href="https://codepen.io/abdosteif/pen/bRoyMb?editors=1100">https://codepen.io/abdosteif/pen/bRoyMb?editors=1100</a>)
+			and Dicson <a href="https://codepen.io/dicson/pen/waKPgQ">(https://codepen.io/dicson/pen/waKPgQ)</a></p> -->
+
+        <p class="myP1" style="padding-bottom: 40px;">Do You know heart Risk factors </p>
+        <!-- <p class="myP">Albi</p> -->
+        <p class="myP" style="font-family: 'Nunito', sans-serif;">
+
+            Cardiovascular disease can take many forms: high blood pressure, coronary artery disease, valvular heart
+            disease,
+            stroke, or arrhythmias (irregular heartbeat). According to the World Health Organization, cardiovascular
+            disease
+            causes more than 17 million deaths in the world each year and is responsible for half of all deaths in the
+            United States.
+
+            Coronary artery disease, the most common form of cardiovascular disease, is the leading cause of death
+            in America today. Cancer, the second largest killer, accounts for a little more than half as many deaths.
+
+            In the United States, more than 80 million Americans have some form of cardiovascular disease. But thanks to
+            many
+            studies involving thousands of patients, researchers have identified certain factors that play important
+            roles
+            in a person’s chances of developing heart disease. These are called risk factors.
+        </p>
+
+        <div class="row">
+            <div class="column" style="background-color:#fff; z-index: -100;">
+
+                <div class="colum-paragrah rowcolumn">
+
+                    <p class="rowpargh">If You want to Check your heart risk level </p>
+                    <p class="rowpargh" > Please,</p>
+                    <p class="rowpargh">click the Calculate Risk button. </p>
+                </div>
+
+
+            </div>
+
+            <div class="column" id="column1" style="background-color:#fff; padding-bottom: 10px;">
+
+                <div class="column-button">
+                    <button class="button"> <a href="/Predicte" style="text-decoration: none;"> Calculate Risk </a>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ******************Footer******************       -->
+
+        <!-- Site footer -->
+        <div style="padding-top: 100px;">
+            <footer class="site-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <h6>About</h6>
+                            <p class="text-justify"> <i>Heart Risk level Prediction </i> is a very necessary web
+                                application for
+                                humans.
+                                we can check the human heart risk level before the becomes a dangerous situation. A lot
+                                of
+                                resources are helped
+                                to build that web application as well.</p>
+                        </div>
+
+                        <div style="padding-left: 60px;" class="col-xs-6 col-md-3">
+                            <h6>Categories</h6>
+                            <ul class="footer-links">
+                                <li><a href="http://scanfcode.com/category/c-language/">Machine Learning Model</a></li>
+                                <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+                                <!-- <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
+                    <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
+                    <li><a href="http://scanfcode.com/category/android/">Android</a></li> -->
+                                <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+                            </ul>
+                        </div>
+
+                        <div style="padding-left: 60px;" class="col-xs-6 col-md-3">
+                            <h6>Quick Links</h6>
+                            <ul class="footer-links">
+                                <li><a href="/Predicte" > Calculate Risk </a></li>
+                                <!-- <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+                    <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+                    <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+                    <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-6 col-xs-12">
+                            <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved.
+                                <!-- <a href="#">Scanfcode</a>. -->
+                            </p>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <ul class="social-icons">
+                                <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+    <!-- Function used to shrink nav bar removing paddings and adding black background -->
+    <script>
+        $(window).scroll(function () {
+            if ($(document).scrollTop() > 50) {
+                $('.nav').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.nav').removeClass('affix');
+            }
+        });
+    </script>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</body>
+
+</html>

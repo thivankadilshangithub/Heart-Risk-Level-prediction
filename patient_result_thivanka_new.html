@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styleresult.CSS') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"> </script>
+
+    <link rel="stylesheet" href="styleresult.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <style>
+            body{
+    background-image: url("https://i0.wp.com/post.healthline.com/wp-content/uploads/2021/03/senior-couple-medicare-asian-1296x728-header.jpg?w=1155&h=1680");
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+    .content{
+        padding: 90px;
+        font-size: 33px;
+        color: #fff;
+        padding-left: 570px;
+       
+        
+    }
+    .head{
+        color: #fff;
+        font-size: 40px;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 700;
+        margin-top: 80px;
+
+    }
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 40%;
+  padding: 10px;
+  height: 100px;
+  padding-left: 250px;
+  opacity: inherit; /* Should be removed. Only for demonstration */
+}
+.column1{
+    padding-left: 320px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.button{
+    padding: 90px;
+    padding-left: 60px;   
+}
+
+
+.row{
+    padding: 10px;
+}
+
+.buinside1{
+    color: black;
+    font-size: 28px;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+.buinside2{
+    color: black;
+    font-size: 22px;
+    border-radius: 20px;
+    padding: 10px 10px;
+}
+
+.buinside1 :hover{
+    color: black;
+}
+.buinside2 :hover{
+    color: black;
+}
+.contentinside{
+    position:absolute;
+    
+}
+
+
+
+
+
+ </style>
+       
+    <title> Heart Risk Level Results</title>
+</head>
+
+<body>
+    <h1 class="head"> {{results.name }} 's Result Sheet</h1>
+    <div class="content">
+        <div class="contentinside" style="opacity: 1;">
+            <p style="font-weight: 700;"> Name : {{results.name }} </p>
+            <p style="font-weight: 700; padding-left: 40px;"> Risk Level : {{results.risk}}% </p>
+        </div>
+
+        
+
+    </div>
+
+    <div class="button" style="padding-top: 170px;">
+        <div class="row">
+            <div class="column">
+                <button  class="buinside1" type="button"><a style="text-decoration: none;" href="/"> Go Main Page--> </a>
+                </button>
+            </div>
+            <div class="column column1">
+                <button  class="buinside2" type="button"><a style="text-decoration: none;" href="/Predicte"> Go Details Page --></a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+
+</html>

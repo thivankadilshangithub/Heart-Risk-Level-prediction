@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styledetail.CSS') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"> </script>
+    
+    <link rel="stylesheet" href="styledetails.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Heart Risk Level Calculator</title>
+    <style>
+        .maincontainer{
+    background: #becbe2;
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(106, 133, 182, 0.5), rgba(186, 200, 224, 0.5));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(106, 133, 182, 0.5), rgba(186, 200, 224, 0.5))
+
+        }
+
+      .button{
+          padding: 10px 20px;
+          border-radius: 50px;
+          font-size: 40px;
+          border: 1px solid white;
+          background-color: #007bff;
+      }  
+
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid px-1 py-5 max-auto  maincontainer ">
+        <div class="row d-flex justify-content-center  ">
+            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center  ">
+                <h1 style="color: rgb(15, 2, 2); font-weight: 700;">Heart Risk Level Prediction</h1>
+                <!-- <p class="blue-text">Just answer a few questions<br> so that we can personalize the right experience for you.</p> -->
+                <div class="card" style="margin-top: 23px; background-color: cadetblue;">
+                    <h5 class="text-center mb-4">Fill the below requirements </h5>
+                    <form class="form-card" action="http://127.0.0.1:5000/getresults" method="POST">
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Name<span class="text-danger"> *</span></label> <input type="text" id="fname" name="name"/ placeholder="Enter your  name" onblur="validate(1)"> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Gender<span class="text-danger"> *</span> </label> <input type="text" id="lname" name="gender"/ placeholder="Enter male or female" onblur="validate(2)"> </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Age<span class="text-danger"> *</span></label> <input type="text" id="fname" name="age"/ placeholder="Enter your Age" onblur="validate(1)"> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">TC<span class="text-danger"> *</span> </label> <input type="text" id="lname" name="tc"/ placeholder="Total Corostarol(mg/dL)" onblur="validate(2)"> </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">HDL<span class="text-danger"> *</span></label> <input type="text" id="fname" name="hdl"/  placeholder="High Density Lipoprotein(mg/dL)" onblur="validate(1)"> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">SBP<span class="text-danger"> *</span> </label> <input type="text" id="lname" name="sbp"/ placeholder="Systolic Blood Pressure(mm/Hg)" onblur="validate(2)"> </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Smoke<span class="text-danger"> *</span></label> <input type="text" id="email" name="smoke"/ placeholder="Enter yes or no " onblur="validate(3)"> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Blood Pressure Medication<span class="text-danger"> *</span></label> <input type="text" id="bpm" name="bpm"/ placeholder="Enter yes or no" onblur="validate(4)"> </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Diabetic<span class="text-danger"> *</span></label> <input type="text" id="job" name="diab"/  placeholder="Enter yes or no" onblur="validate(5)"> </div>
+                        </div>
+                        <!-- <div class="row justify-content-between text-left">
+                            <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">What would you be using Flinks for?<span class="text-danger"> *</span></label> <input type="text" id="ans" name="ans" placeholder="" onblur="validate(6)"> </div>
+                        </div> -->
+                        <div class="row justify-content-end">
+                            <div class="form-group col-sm-6"> <button type="submit" class="btn-block btn-primary">Calculate Risk</button> </div>
+                        </div>
+                    </form>
+                </div>
+                <p class="detailparag" style="padding-top: 30px;" >
+                    Application for humans. we can check the human heart risk level before the becomes a dangerous situation. A lot of
+                    resources are helped to build that web application as well.
+                </p>
+
+                <div class="column-button" style="padding-top: 20px;">
+                    <button class="btn-block btn-primary button" style="color: #fff;"> <a style="color: #fff; text-decoration: none;" href='/' style="text-decoration: none;"> Back To the Main page </a>
+                    </button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    
+
+   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script src="js/scripts.js"></script>
+   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+   <script>
+       function validate(val) {
+    v1 = document.getElementById("fname");
+    v2 = document.getElementById("lname");
+    v3 = document.getElementById("email");
+    v4 = document.getElementById("mob");
+    v5 = document.getElementById("job");
+    v6 = document.getElementById("ans");
+    
+    flag1 = true;
+    flag2 = true;
+    flag3 = true;
+    flag4 = true;
+    flag5 = true;
+    flag6 = true;
+    
+    if(val>=1 || val==0) {
+    if(v1.value == "") {
+    v1.style.borderColor = "red";
+    flag1 = false;
+    }
+    else {
+    v1.style.borderColor = "green";
+    flag1 = true;
+    }
+    }
+    
+    if(val>=2 || val==0) {
+    if(v2.value == "") {
+    v2.style.borderColor = "red";
+    flag2 = false;
+    }
+    else {
+    v2.style.borderColor = "green";
+    flag2 = true;
+    }
+    }
+    if(val>=3 || val==0) {
+    if(v3.value == "") {
+    v3.style.borderColor = "red";
+    flag3 = false;
+    }
+    else {
+    v3.style.borderColor = "green";
+    flag3 = true;
+    }
+    }
+    if(val>=4 || val==0) {
+    if(v4.value == "") {
+    v4.style.borderColor = "red";
+    flag4 = false;
+    }
+    else {
+    v4.style.borderColor = "green";
+    flag4 = true;
+    }
+    }
+    if(val>=5 || val==0) {
+    if(v5.value == "") {
+    v5.style.borderColor = "red";
+    flag5 = false;
+    }
+    else {
+    v5.style.borderColor = "green";
+    flag5 = true;
+    }
+    }
+    if(val>=6 || val==0) {
+    if(v6.value == "") {
+    v6.style.borderColor = "red";
+    flag6 = false;
+    }
+    else {
+    v6.style.borderColor = "green";
+    flag6 = true;
+    }
+    }
+    
+    flag = flag1 && flag2 && flag3 && flag4 && flag5 && flag6;
+    
+    return flag;
+    }
+   </script>
+</body>
+
+</html>
